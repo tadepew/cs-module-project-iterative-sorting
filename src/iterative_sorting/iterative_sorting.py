@@ -6,7 +6,7 @@ def selection_sort(arr):
 
     # loop through n-1 elements
     # for every iteration, the minimum element from unsorted subarray is picked and moved to the sorted subarray
-    for i in range(0, len(arr) - 1):
+    for i in range(len(arr)):
         cur_index = i
         smallest_index = cur_index
         # TO-DO: find next smallest element
@@ -65,6 +65,7 @@ def selection_sort(arr):
 def bubble_sort(arr):
     # outer loop
     # start range at length of the arr - 1 to 0 in negative order so -1
+    # range(0, len(arr)-1)
     # for i in range(len(arr)-1, 0, -1):
     #     for j in range(i):
     #         if arr[j] > arr[j+1]:
@@ -72,19 +73,28 @@ def bubble_sort(arr):
 
     # return arr
 
+    #     # optimized version:
+    #     # stops if array is already sorted
     sorted = False
     while not sorted:
         sorted = True
-        for i in range(0, len(arr) - 1):
+        for i in range(0, len(arr)-1):
             if arr[i] > arr[i+1]:
-                # if item in the list to the left is greater than the item to the right then sorted is false, once done the sorted on line 77 remains true which breaks out of the loop
+                # if item in the list to the left is greater than the item to the right then sorted is false, once done (when if statement no longer has a left item larger than right) the sorted variable on line 77 remains true which breaks out of the loop
                 arr[i], arr[i+1] = arr[i+1], arr[i]
                 sorted = False
     return arr
 
 
-# STRETCH: implement the Count Sort function below
-def count_sort(arr, maximum=-1):
-    # Your code here
+# # STRETCH: implement the Count Sort function below
+# def count_sort(arr, maximum=-1):
+#     # sort based on numeric keys, doesn't compare
 
-    return arr
+#     return arr
+
+
+# Print out each element of the following array on a separate line:
+arr1 = ['Joe', 2, 'Ted', 4.98, 14, 'Sam',
+        'void *', '42', 'float', 'pointers', 5006]
+# You may use whatever programming language you'd like.
+# Verbalize your thought process as much as possible before writing any code. Run through the UPER problem solving framework while going through your thought process.
